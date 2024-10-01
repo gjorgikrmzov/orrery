@@ -3,7 +3,7 @@ import { OrbitControls, Text, Effects } from "@react-three/drei";
 import { useEffect, useState, useRef } from "react";
 import { fetchNearEarthObjects } from "./api/nasaApi";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import { Skydome } from "@/components/SkyDome";
+// import { Skydome } from "@/components/SkyDome";
 import { NEO, NEOModel } from "@/components/Neo";
 
 export default function Home() {

@@ -64,7 +64,7 @@ export default function Home() {
         </div>
 
         <Canvas camera={{ position: [0, 0, 20], fov: 50 }}>
-          <Skydome />
+          {/* <Skydome /> */}
           {/* Lighting */}
           <ambientLight />
           <pointLight position={[10, 10, 10]} />

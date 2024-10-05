@@ -21,6 +21,8 @@ export default function Home() {
   const [showTrajectories, setShowTrajectories] = useState(false);
   const [selectedNeo, setSelectedNeo] = useState<NEO | null>(null); // Track selected NEO
 
+  const withoutEric = neoData.filter((neo: NEO) => neo.name != '4954 Eric (1990 SQ)')
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -42,6 +44,7 @@ export default function Home() {
   }, []);
 
   if (loading) return <div>Loading...</div>;
+  
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
@@ -77,7 +80,7 @@ export default function Home() {
           <Earth />
 
           {/* Render NEO Models */}
-          {neoData.map((neo) => (
+          {withoutEric.map((neo) => (
             <NEOModel
               key={neo.id}
               neo={neo}

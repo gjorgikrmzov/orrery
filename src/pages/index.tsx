@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div style={{ display: "flex", height: "100vh" }}>
       {/* Left side: 3D Canvas */}
-      <div className="w-full border" style={{ flex: 1 }}>
+      <div className="w-full" style={{ flex: 1 }}>
         <div
           className="py-4 flex px-4 flex-col md:flex-row items-center justify-between"
           style={{ textAlign: "center" }}

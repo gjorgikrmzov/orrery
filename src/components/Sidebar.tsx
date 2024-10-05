@@ -3,7 +3,7 @@ import { NEO } from "./Neo";
 import { motion } from 'framer-motion'
 
 export const Sidebar = ({ neo, onClose }: { neo: NEO, onClose: () => void }) => (
-    <motion.div initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}}  exit={{x: 200, opacity:0}} className="absolute  h-full pb-10 md:pb-6 w-fit bg-black right-0 flex justify-center items-end  p-6" >
+    <motion.div initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}}  exit={{x: 200, opacity:0}} className="absolute  h-full text-white pb-10 md:pb-6 w-fit bg-black right-0 flex justify-center items-end  p-6" >
       <div className=" justify-start  items-start flex gap-y-3 flex-col">
 
       <button onClick={onClose}><CloseCircle variant="Bold" size={24} color='#fff' /></button>

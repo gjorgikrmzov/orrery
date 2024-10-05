@@ -49,12 +49,12 @@ export default function Home() {
   return (
     <div style={{ display: "flex", height: "100vh" }}>
       {/* Left side: 3D Canvas */}
-      <div style={{ flex: 1 }}>
+      <div className="w-full border" style={{ flex: 1 }}>
         <div
-          className="py-4 flex px-4 flex-row items-center justify-between"
+          className="py-4 flex px-4 flex-col md:flex-row items-center justify-between"
           style={{ textAlign: "center" }}
         >
-          <h1 className="text-xl">Orrery WebApp</h1>
+          <h1 className="text-md mb-2 md:text-xl">Orrery WebApp</h1>
           <div className="gap-x-2 flex flex-row items-center">
             <button
               className="py-2 font-sans px-3 rounded-xl bg-white text-black"

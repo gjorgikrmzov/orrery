@@ -3,7 +3,6 @@ import { Text } from "@react-three/drei";
 import { useRef } from "react";
 import * as THREE from "three";
 import { Trajectory } from "@/components/Trajectory";
-import { useRouter } from "next/router";
 
 export interface NEO {
   id: string;
@@ -15,6 +14,17 @@ export interface NEO {
     };
   };
   is_potentially_hazardous_asteroid: boolean;
+  close_approach_data: {
+    close_approach_date: string;
+    close_approach_date_full: string;
+    relative_velocity: {
+      kilometers_per_hour: string;
+    };
+    miss_distance: {
+      kilometers: string;
+    };
+    orbiting_body: string;
+  }[];
   imageUrl?: string;
 }
 
@@ -22,12 +32,13 @@ export const NEOModel = ({
   neo,
   showName,
   showTrajectory,
+  onClick,
 }: {
   neo: NEO;
   showName: boolean;
   showTrajectory: boolean;
+  onClick: () => void;
 }) => {
-
   const size = neo.estimated_diameter.kilometers.estimated_diameter_max;
   const color = neo.is_potentially_hazardous_asteroid ? "red" : "gray";
   const position = useRef<[number, number, number]>([
@@ -44,9 +55,9 @@ export const NEOModel = ({
   });
 
   return (
-    <group  position={position.current} >
+    <group position={position.current}>
       {/* NEO Sphere with texture and glow */}
-      <mesh material={glowMaterial}>
+      <mesh material={glowMaterial} onClick={onClick}>
         <sphereGeometry args={[size / 2, 32, 32]} />
       </mesh>
 
